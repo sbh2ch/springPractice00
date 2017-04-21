@@ -17,4 +17,8 @@ public class BoardDAO {
     public List<?> selectBoardList() {
         return session.selectList("board.selectBoardList");
     }
+
+    public BoardVO selectBoardOne(String brdno){
+        return session.selectOne("board.selectBoardOne", brdno);
+    }
 }

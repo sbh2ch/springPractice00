@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by kiost on 2017-04-21.
  */
@@ -23,12 +25,12 @@ public class BoardController {
     @RequestMapping("/boardForm.kosc")
     public String write(Model model) {
 
-        return "index";
+        return "form";
     }
 
     @RequestMapping("/boardRead.kosc")
-    public String read(Model model) {
-
-        return "index";
+    public String read(HttpServletRequest req, Model model) {
+        model.addAttribute("boardInfo",service.selectBoardOne(req));
+        return "read";
     }
 }
