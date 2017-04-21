@@ -16,7 +16,19 @@ public class BoardController {
 
     @RequestMapping("/home.kosc")
     public String home(Model model) {
-        
+        model.addAttribute("listview",service.selectBoardList());
+        return "list";
+    }
+
+    @RequestMapping("/boardForm.kosc")
+    public String write(Model model) {
+
+        return "index";
+    }
+
+    @RequestMapping("/boardRead.kosc")
+    public String read(Model model) {
+
         return "index";
     }
 }

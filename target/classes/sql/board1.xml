@@ -6,4 +6,9 @@
         INSERT INTO TBL_BOARD(BRDTITLE, BRDWRITER, BRDMEMO, BRDDATE)
         VALUES (#{brdtitle}, #{brdwriter}, #{brdmemo}, NOW() )
     </insert>
+    <select id="selectBoardList" resultType="com.son.BoardVO">
+        SELECT BRDNO, BRDTITLE, BRDWRITER, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
+        FROM TBL_BOARD
+        ORDER BY BRDNO DESC
+    </select>
 </mapper>
