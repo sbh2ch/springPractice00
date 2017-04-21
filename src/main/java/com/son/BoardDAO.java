@@ -11,6 +11,4 @@ import org.springframework.stereotype.Repository;
 public class BoardDAO {
     @Autowired
     private SqlSession session;
-
-
 }
