@@ -1,12 +1,22 @@
 package com.son;
 
+import com.son.common.UtilEtc;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+
 /**
  * Created by kiost on 2017-04-21.
  */
 public class BoardVO {
-    private String brdno, brdtitle, brdwriter, brdmemo, brddate, brdhit, brddeleteflag;
+    private String brdno, brdtitle, brdwriter, brdmemo, brddate, brdhit, brddeleteflag, filecnt;
+    private List<MultipartFile> uploadfile;
 
     public BoardVO() {
+    }
+
+    public String getShortTitle(Integer len) {
+        return UtilEtc.getShortString(brdtitle, len);
     }
 
     public String getBrdno() {
@@ -34,7 +44,7 @@ public class BoardVO {
     }
 
     public String getBrdmemo() {
-        return brdmemo;
+        return brdmemo.replaceAll("(?i)<script", "&lt;script");
     }
 
     public void setBrdmemo(String brdmemo) {
@@ -63,5 +73,21 @@ public class BoardVO {
 
     public void setBrddeleteflag(String brddeleteflag) {
         this.brddeleteflag = brddeleteflag;
+    }
+
+    public String getFilecnt() {
+        return filecnt;
+    }
+
+    public void setFilecnt(String filecnt) {
+        this.filecnt = filecnt;
+    }
+
+    public List<MultipartFile> getUploadfile() {
+        return uploadfile;
+    }
+
+    public void setUploadfile(List<MultipartFile> uploadfile) {
+        this.uploadfile = uploadfile;
     }
 }

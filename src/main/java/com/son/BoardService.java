@@ -2,7 +2,11 @@ package com.son;
 
 import com.son.common.SearchVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +19,9 @@ import java.util.List;
 public class BoardService {
     @Autowired
     private BoardDAO boardDAO;
+
+    @Autowired
+    private DataSourceTransactionManager txManager;
 
     public List<?> selectBoardList(SearchVO searchVO) {
         return boardDAO.selectBoardList(searchVO);
@@ -35,25 +42,21 @@ public class BoardService {
         }
     }
 
-    public void write(Model model) {
+    public void write(Model model, BoardVO boardVO) {
         HttpServletRequest req = (HttpServletRequest) model.asMap().get("req");
+        DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+        def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+        TransactionStatus status = txManager.getTransaction(def);
 
-        String brdno = req.getParameter("brdno");
-        BoardVO b = boardDAO.selectBoardOne(brdno);
-
-        String brdwriter = req.getParameter("brdwriter");
-        String brdtitle = req.getParameter("brdtitle");
-        String brdmemo = req.getParameter("brdmemo");
-        BoardVO boardVO = new BoardVO();
-        boardVO.setBrdno(brdno);
-        boardVO.setBrdwriter(brdwriter);
-        boardVO.setBrdtitle(brdtitle);
-        boardVO.setBrdmemo(brdmemo);
-
-        if (b != null) {
-            boardDAO.updateBoard(boardVO);
-        } else {
-            boardDAO.insertBoard(boardVO);
+        try {
+            if (boardVO.getBrdno() == null || "".equals(boardVO.getBrdno())) {
+                boardDAO.insertBoard(boardVO);
+            } else {
+                boardDAO.updateBoard(boardVO);
+            }
+            txManager.commit(status);
+        } catch (Exception e) {
+            txManager.rollback(status);
         }
     }
 

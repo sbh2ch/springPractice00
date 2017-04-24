@@ -30,7 +30,7 @@
     </tr>
     <tr>
         <td>content</td>
-        <td><c:out value="${boardInfo.brdmemo}"/></td>
+        <td><c:out value="${boardInfo.brdmemo}" escapeXml="false"/></td>
     </tr>
     </tbody>
 </table>

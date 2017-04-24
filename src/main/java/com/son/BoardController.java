@@ -1,6 +1,5 @@
 package com.son;
 
-import com.son.common.PageVO;
 import com.son.common.SearchVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,9 +43,9 @@ public class BoardController {
     }
 
     @RequestMapping("/boardSave.kosc")
-    public String save(HttpServletRequest req, Model model) {
+    public String save(HttpServletRequest req, Model model, BoardVO boardVO) {
         model.addAttribute("req", req);
-        service.write(model);
+        service.write(model, boardVO);
 
         return "redirect:home.kosc";
     }
