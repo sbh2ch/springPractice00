@@ -13,6 +13,33 @@
     <title>form</title>
 </head>
 <body>
-    <form></form>
+<form name="form1" action="/board00/boardSave.kosc" method="post">
+    <table border="1" style="width: 600px">
+        <caption>board</caption>
+        <colgroup>
+            <col width="15%"/>
+            <col width="*%"/>
+        </colgroup>
+        <tbody>
+        <tr>
+            <td>writer</td>
+            <td><input type="text" name="brdwriter" size="20" maxlength="20"
+                       value="<c:out value="${boardinfo.brdwriter}"/>" required/></td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td><input type="text" name="brdtitle" size="20" maxlength="20"
+                       value="<c:out value="${boardinfo.brdtitle}"/>" required/></td>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td><input type="text" name="brdmemo" size="20" maxlength="20"
+                       value="<c:out value="${boardinfo.brdmemo}"/>" required/></td>
+        </tr>
+        </tbody>
+    </table>
+    <input type="hidden" name="brdno" value="<c:out value="${boardinfo.brdno}"/>">
+    <a href="#" onclick="form1.submit()">save</a>
+</form>
 </body>
 </html>

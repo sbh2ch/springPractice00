@@ -36,9 +36,19 @@ public class BoardController {
         return "read";
     }
 
-    @RequestMapping("")
-    public String updata(HttpServletRequest req, Model model) {
+    @RequestMapping("/boardSave.kosc")
+    public String save(HttpServletRequest req, Model model) {
+        model.addAttribute("req", req);
+        service.write(model);
 
-        return "form";
+        return "redirect:home.kosc";
+    }
+
+    @RequestMapping("/boardDelete.kosc")
+    public String delete(HttpServletRequest req, Model model){
+        model.addAttribute("req", req);
+        service.deleteBoard(model);
+
+        return "redirect:home.kosc";
     }
 }

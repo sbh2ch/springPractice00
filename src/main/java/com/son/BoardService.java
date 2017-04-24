@@ -33,4 +33,33 @@ public class BoardService {
             model.addAttribute("boardinfo", boardDAO.selectBoardOne(brdno));
         }
     }
+
+    public void write(Model model) {
+        HttpServletRequest req = (HttpServletRequest) model.asMap().get("req");
+
+        String brdno = req.getParameter("brdno");
+        BoardVO b = boardDAO.selectBoardOne(brdno);
+
+        String brdwriter = req.getParameter("brdwriter");
+        String brdtitle = req.getParameter("brdtitle");
+        String brdmemo = req.getParameter("brdmemo");
+        BoardVO boardVO = new BoardVO();
+        boardVO.setBrdno(brdno);
+        boardVO.setBrdwriter(brdwriter);
+        boardVO.setBrdtitle(brdtitle);
+        boardVO.setBrdmemo(brdmemo);
+
+        if(b != null){
+            boardDAO.updateBoard(boardVO);
+        } else {
+            boardDAO.insertBoard(boardVO);
+        }
+    }
+
+    public void deleteBoard(Model model) {
+        HttpServletRequest req = (HttpServletRequest) model.asMap().get("req");
+        String brdno = req.getParameter("brdno");
+
+        boardDAO.deleteBoard(brdno);
+    }
 }

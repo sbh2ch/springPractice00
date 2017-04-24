@@ -13,29 +13,29 @@
     <title>read</title>
 </head>
 <body>
-    <table border="1" style="width: 600px;">
-        <caption>board</caption>
-        <colgroup>
-            <col width="15%"/>
-            <col width="*%"/>
-        </colgroup>
-        <tbody>
-            <tr>
-                <td>writer</td>
-                <td><c:out value="${boardInfo.brdwriter}"/></td>
-            </tr>
-            <tr>
-                <td>title</td>
-                <td><c:out value="${boardInfo.brdtitle}"/></td>
-            </tr>
-            <tr>
-                <td>content</td>
-                <td><c:out value="${boardInfo.brdmemo}"/></td>
-            </tr>
-        </tbody>
-    </table>
-    <a href="#" onclick="history.back()">back</a>
-    <a href="/board00/boardDelete?brdno=<c:out value="${boardInfo.brdno}"/>">del</a>
-    <a href="/board00/boardUpdate?brdno=<c:out value="${boardInfo.brdno}"/>">update</a>
+<table border="1" style="width: 600px;">
+    <caption>board</caption>
+    <colgroup>
+        <col width="15%"/>
+        <col width="*%"/>
+    </colgroup>
+    <tbody>
+    <tr>
+        <td>writer</td>
+        <td><c:out value="${boardInfo.brdwriter}"/></td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td><c:out value="${boardInfo.brdtitle}"/></td>
+    </tr>
+    <tr>
+        <td>content</td>
+        <td><c:out value="${boardInfo.brdmemo}"/></td>
+    </tr>
+    </tbody>
+</table>
+<a href="#" onclick="history.back()">back</a>
+<a href="/board00/boardDelete.kosc?brdno=<c:out value="${boardInfo.brdno}"/>">del</a>
+<a href="/board00/boardForm.kosc?brdno=<c:out value="${boardInfo.brdno}"/>">update</a>
 </body>
 </html>

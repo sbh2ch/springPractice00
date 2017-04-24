@@ -18,8 +18,19 @@ public class BoardDAO {
         return session.selectList("board.selectBoardList");
     }
 
-    public BoardVO selectBoardOne(String brdno){
+    public BoardVO selectBoardOne(String brdno) {
         return session.selectOne("board.selectBoardOne", brdno);
     }
 
+    public void updateBoard(BoardVO boardVO) {
+        session.update("board.updateBoard", boardVO);
+    }
+
+    public void insertBoard(BoardVO boardVO) {
+        session.insert("board.insertBoard", boardVO);
+    }
+
+    public void deleteBoard(String brdno) {
+        session.delete("board.deleteBoard", brdno);
+    }
 }
