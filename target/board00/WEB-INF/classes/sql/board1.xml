@@ -13,7 +13,7 @@
     </select>
     
     <select id="selectBoardOne" resultType="com.son.BoardVO" parameterType="String">
-        SELECT BRDNO, BRDWRITER, BRDTITLE, BRDMEMO, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
+        SELECT BRDNO, BRDTITLE, BRDMEMO, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
         FROM TBL_BOARD
         WHERE BRDNO=#{brdno}
     </select>

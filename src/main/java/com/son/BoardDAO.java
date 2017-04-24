@@ -33,4 +33,8 @@ public class BoardDAO {
     public void deleteBoard(String brdno) {
         session.delete("board.deleteBoard", brdno);
     }
+
+    public Integer selectBoardCount() {
+        return session.selectOne("board.selectBoardCount");
+    }
 }

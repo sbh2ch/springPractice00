@@ -1,5 +1,6 @@
 package com.son;
 
+import com.son.common.PageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +18,9 @@ public class BoardController {
     private BoardService service;
 
     @RequestMapping("/home.kosc")
-    public String home(Model model) {
+    public String home(PageVO pageVO, Model model) {
+        pageVO.pageCalculate(service.selectBoardCount());
+
         model.addAttribute("listview", service.selectBoardList());
         return "list";
     }

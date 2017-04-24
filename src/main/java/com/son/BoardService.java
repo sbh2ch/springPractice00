@@ -62,4 +62,8 @@ public class BoardService {
 
         boardDAO.deleteBoard(brdno);
     }
+
+    public Integer selectBoardCount(){
+        return boardDAO.selectBoardCount();
+    }
 }
