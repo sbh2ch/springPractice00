@@ -1,6 +1,6 @@
 package com.son;
 
-import com.son.common.PageVO;
+import com.son.common.SearchVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -16,8 +16,8 @@ public class BoardService {
     @Autowired
     private BoardDAO boardDAO;
 
-    public List<?> selectBoardList(PageVO pageVO) {
-        return boardDAO.selectBoardList(pageVO);
+    public List<?> selectBoardList(SearchVO searchVO) {
+        return boardDAO.selectBoardList(searchVO);
     }
 
     public BoardVO selectBoardOne(HttpServletRequest req) {
@@ -64,8 +64,8 @@ public class BoardService {
         boardDAO.deleteBoard(brdno);
     }
 
-    public Integer selectBoardCount() {
-        return boardDAO.selectBoardCount();
+    public Integer selectBoardCount(SearchVO searchVO) {
+        return boardDAO.selectBoardCount(searchVO);
     }
 
     public void readBoard(HttpServletRequest req) {

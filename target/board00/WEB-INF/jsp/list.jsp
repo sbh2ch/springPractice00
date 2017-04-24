@@ -7,10 +7,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>list</title>
+    <script>
+        function fn_formSubmit(){
+            document.form1.submit();
+        }
+    </script>
 </head>
 <body>
 <a href="/board00/boardForm.kosc">write</a>
@@ -37,7 +43,6 @@
         <c:url var="link" value="/board00/boardRead.kosc">
             <c:param name="brdno" value="${listview.brdno}"/>
         </c:url>
-
         <tr>
             <td><c:out value="${listview.brdno}"/></td>
             <td><a href="${link}"><c:out value="${listview.brdtitle}"/></a></td>
@@ -48,22 +53,16 @@
     </c:forEach>
     </tbody>
 </table>
-<c:if test="${pageVO.totPage > 1}">
-    <div class="paging">
-        <c:forEach var="i" begin="${pageVO.pageStart}" end="${pageVO.pageEnd}" step="1">
-            <c:url var="pageLink" value="/board00/home.kosc">
-                <c:param name="page" value="${i}"/>
-            </c:url>
-            <c:choose>
-                <c:when test="${i eq pageVO.page}">
-                    <c:out value="${i}"/>
-                </c:when>
-                <c:otherwise>
-                    <a href="${pageLink}"><c:out value="${i}"/></a>
-                </c:otherwise>
-            </c:choose>
-        </c:forEach>
+<form id="form1" name="form1" method="post">
+    <jsp:include page="/WEB-INF/jsp/common/paging.jsp"/>
+    <div>
+        <input type="checkbox" name="searchType" value="brdtitle" <c:if test="${fn:indexOf(searchVO.searchType, 'brdtitle') != -1}">checked="checked"</c:if>/>
+        <label class="chkselect">title</label>
+        <input type="checkbox" name="searchType" value="brdmemo" <c:if test="${fn:indexOf(searchVO.searchType, 'brdmemo') != -1}">checked="checked"</c:if>/>
+        <label class="chkselect">content</label>
+        <input type="text" name="searchKeyword" style="width: 150px;" maxlength="50" value="<c:out value="${searchVO.searchKeyword}"/>" onkeydown="if(event.keyCode == 13) { fn_formSubmit(); }"/>
+        <input type="button" name="btn_search" class="btn_sch" value="search" onclick="fn_formSubmit()"/>
     </div>
-</c:if>
+</form>
 </body>
 </html>

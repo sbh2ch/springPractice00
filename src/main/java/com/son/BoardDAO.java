@@ -1,6 +1,7 @@
 package com.son;
 
 import com.son.common.PageVO;
+import com.son.common.SearchVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,8 +16,8 @@ public class BoardDAO {
     @Autowired
     private SqlSession session;
 
-    public List<?> selectBoardList(PageVO pageVO) {
-        return session.selectList("board.selectBoardList", pageVO);
+    public List<?> selectBoardList(SearchVO searchVO) {
+        return session.selectList("board.selectBoardList", searchVO);
     }
 
     public BoardVO selectBoardOne(String brdno) {
@@ -35,8 +36,8 @@ public class BoardDAO {
         session.delete("board.deleteBoard", brdno);
     }
 
-    public Integer selectBoardCount() {
-        return session.selectOne("board.selectBoardCount");
+    public Integer selectBoardCount(SearchVO searchVO) {
+        return session.selectOne("board.selectBoardCount", searchVO);
     }
 
     public void readBoard(String brdno) {

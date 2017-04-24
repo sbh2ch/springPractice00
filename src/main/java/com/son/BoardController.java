@@ -1,6 +1,7 @@
 package com.son;
 
 import com.son.common.PageVO;
+import com.son.common.SearchVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +19,11 @@ public class BoardController {
     private BoardService service;
 
     @RequestMapping("/home.kosc")
-    public String home(PageVO pageVO, Model model) {
-        pageVO.pageCalculate(service.selectBoardCount());
+    public String home(SearchVO searchVO, Model model) {
+        searchVO.pageCalculate(service.selectBoardCount(searchVO));
 
-        model.addAttribute("listview", service.selectBoardList(pageVO));
-        model.addAttribute("pageVO", pageVO);
+        model.addAttribute("listview", service.selectBoardList(searchVO));
+        model.addAttribute("pageVO", searchVO);
 
         return "list";
     }
