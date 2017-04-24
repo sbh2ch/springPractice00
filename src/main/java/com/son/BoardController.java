@@ -21,7 +21,9 @@ public class BoardController {
     public String home(PageVO pageVO, Model model) {
         pageVO.pageCalculate(service.selectBoardCount());
 
-        model.addAttribute("listview", service.selectBoardList());
+        model.addAttribute("listview", service.selectBoardList(pageVO));
+        model.addAttribute("pageVO", pageVO);
+
         return "list";
     }
 
@@ -35,6 +37,7 @@ public class BoardController {
 
     @RequestMapping("/boardRead.kosc")
     public String read(HttpServletRequest req, Model model) {
+        service.readBoard(req);
         model.addAttribute("boardInfo", service.selectBoardOne(req));
         return "read";
     }
@@ -48,7 +51,7 @@ public class BoardController {
     }
 
     @RequestMapping("/boardDelete.kosc")
-    public String delete(HttpServletRequest req, Model model){
+    public String delete(HttpServletRequest req, Model model) {
         model.addAttribute("req", req);
         service.deleteBoard(model);
 

@@ -4,7 +4,7 @@ package com.son;
  * Created by kiost on 2017-04-21.
  */
 public class BoardVO {
-    private String brdno, brdtitle, brdwriter, brdmemo, brddate;
+    private String brdno, brdtitle, brdwriter, brdmemo, brddate, brdhit, brddeleteflag;
 
     public BoardVO() {
     }
@@ -47,5 +47,21 @@ public class BoardVO {
 
     public void setBrddate(String brddate) {
         this.brddate = brddate;
+    }
+
+    public String getBrdhit() {
+        return brdhit;
+    }
+
+    public void setBrdhit(String brdhit) {
+        this.brdhit = brdhit;
+    }
+
+    public String getBrddeleteflag() {
+        return brddeleteflag;
+    }
+
+    public void setBrddeleteflag(String brddeleteflag) {
+        this.brddeleteflag = brddeleteflag;
     }
 }

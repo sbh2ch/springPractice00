@@ -1,5 +1,6 @@
 package com.son;
 
+import com.son.common.PageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -15,8 +16,8 @@ public class BoardService {
     @Autowired
     private BoardDAO boardDAO;
 
-    public List<?> selectBoardList() {
-        return boardDAO.selectBoardList();
+    public List<?> selectBoardList(PageVO pageVO) {
+        return boardDAO.selectBoardList(pageVO);
     }
 
     public BoardVO selectBoardOne(HttpServletRequest req) {
@@ -49,7 +50,7 @@ public class BoardService {
         boardVO.setBrdtitle(brdtitle);
         boardVO.setBrdmemo(brdmemo);
 
-        if(b != null){
+        if (b != null) {
             boardDAO.updateBoard(boardVO);
         } else {
             boardDAO.insertBoard(boardVO);
@@ -63,7 +64,11 @@ public class BoardService {
         boardDAO.deleteBoard(brdno);
     }
 
-    public Integer selectBoardCount(){
+    public Integer selectBoardCount() {
         return boardDAO.selectBoardCount();
+    }
+
+    public void readBoard(HttpServletRequest req) {
+        boardDAO.readBoard(req.getParameter("brdno"));
     }
 }

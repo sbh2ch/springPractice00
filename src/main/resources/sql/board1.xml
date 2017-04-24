@@ -6,15 +6,16 @@
         INSERT INTO TBL_BOARD(BRDTITLE, BRDWRITER, BRDMEMO, BRDDATE, BRDHIT, BRDDELETEFLAG)
         VALUES (#{brdtitle}, #{brdwriter}, #{brdmemo}, NOW(), 0, 'N')
     </insert>
-    <select id="selectBoardList" resultType="com.son.BoardVO">
-        SELECT BRDNO, BRDTITLE, BRDWRITER, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
+    <select id="selectBoardList" resultType="com.son.BoardVO" parameterType="com.son.common.PageVO">
+        SELECT BRDNO, BRDTITLE, BRDWRITER, BRDHIT, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
         FROM TBL_BOARD
         WHERE BRDDELETEFLAG='N'
         ORDER BY BRDNO DESC
+        LIMIT ${rowStart-1}, 10
     </select>
 
     <select id="selectBoardOne" resultType="com.son.BoardVO" parameterType="String">
-        SELECT BRDNO, BRDTITLE, BRDMEMO, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
+        SELECT BRDNO, BRDWRITER, BRDTITLE, BRDMEMO, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
         FROM TBL_BOARD
         WHERE BRDNO = #{brdno} AND BRDDELETEFLAG = 'N'
     </select>
