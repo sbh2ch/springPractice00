@@ -2,6 +2,7 @@ package com.son;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -23,4 +24,13 @@ public class BoardService {
         return boardDAO.selectBoardOne(brdno);
     }
 
+    public void writeForm(Model model) {
+        HttpServletRequest req = (HttpServletRequest) model.asMap().get("req");
+
+        String brdno = req.getParameter("brdno");
+
+        if (brdno != null) {
+            model.addAttribute("boardinfo", boardDAO.selectBoardOne(brdno));
+        }
+    }
 }

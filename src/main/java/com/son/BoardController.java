@@ -18,19 +18,27 @@ public class BoardController {
 
     @RequestMapping("/home.kosc")
     public String home(Model model) {
-        model.addAttribute("listview",service.selectBoardList());
+        model.addAttribute("listview", service.selectBoardList());
         return "list";
     }
 
     @RequestMapping("/boardForm.kosc")
-    public String write(Model model) {
+    public String form(HttpServletRequest req, Model model) {
+        model.addAttribute("req", req);
+        service.writeForm(model);
 
         return "form";
     }
 
     @RequestMapping("/boardRead.kosc")
     public String read(HttpServletRequest req, Model model) {
-        model.addAttribute("boardInfo",service.selectBoardOne(req));
+        model.addAttribute("boardInfo", service.selectBoardOne(req));
         return "read";
+    }
+
+    @RequestMapping("")
+    public String updata(HttpServletRequest req, Model model) {
+
+        return "form";
     }
 }

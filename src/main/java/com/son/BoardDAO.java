@@ -21,4 +21,5 @@ public class BoardDAO {
     public BoardVO selectBoardOne(String brdno){
         return session.selectOne("board.selectBoardOne", brdno);
     }
+
 }
