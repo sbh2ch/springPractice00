@@ -2,7 +2,7 @@
 ####to celebrate that changed the IDE (from Eclipse to IntelliJ),I created the simple spring project.(actually... to practice the SPRING)
 
 I guess this project will be simple board project included some functions that reply, file IO, and so on
-
+```
 CREATE TABLE TBL_BOARD (
   BGNO INT(11),								-- board group no
   BRDNO int(11) NOT NULL AUTO_INCREMENT,	-- article number
@@ -48,3 +48,4 @@ CREATE TABLE TBL_BOARDGROUP (
   BGDATE DATETIME,							-- date
   PRIMARY KEY (BGNO)
 );
+```
