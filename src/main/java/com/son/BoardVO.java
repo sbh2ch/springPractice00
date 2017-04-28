@@ -90,4 +90,19 @@ public class BoardVO {
     public void setUploadfile(List<MultipartFile> uploadfile) {
         this.uploadfile = uploadfile;
     }
+
+    @Override
+    public String toString() {
+        return "BoardVO{" +
+                "brdno='" + brdno + '\'' +
+                ", brdtitle='" + brdtitle + '\'' +
+                ", brdwriter='" + brdwriter + '\'' +
+                ", brdmemo='" + brdmemo + '\'' +
+                ", brddate='" + brddate + '\'' +
+                ", brdhit='" + brdhit + '\'' +
+                ", brddeleteflag='" + brddeleteflag + '\'' +
+                ", filecnt='" + filecnt + '\'' +
+                ", uploadfile=" + uploadfile +
+                '}';
+    }
 }

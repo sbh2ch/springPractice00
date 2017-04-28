@@ -48,14 +48,20 @@ public class BoardService {
         def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
         TransactionStatus status = txManager.getTransaction(def);
 
+        System.out.println(boardVO);
+
         try {
             if (boardVO.getBrdno() == null || "".equals(boardVO.getBrdno())) {
                 boardDAO.insertBoard(boardVO);
+            System.out.println("insert");
             } else {
                 boardDAO.updateBoard(boardVO);
+            System.out.println("update");
             }
             txManager.commit(status);
         } catch (Exception e) {
+            System.out.println("rollback");
+            e.printStackTrace();
             txManager.rollback(status);
         }
     }
