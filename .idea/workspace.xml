@@ -8,14 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="337fa5d0-fb93-4990-b536-5aef8dc4948e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/son/BoardService.java" afterPath="$PROJECT_DIR$/src/main/java/com/son/BoardService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/son/common/FileDownload.java" afterPath="$PROJECT_DIR$/src/main/java/com/son/common/FileDownload.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/son/common/FileUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/son/common/FileUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/sql/board1.xml" afterPath="$PROJECT_DIR$/src/main/resources/sql/board1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/form.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/form.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/board00/WEB-INF/classes/sql/board1.xml" afterPath="$PROJECT_DIR$/target/board00/WEB-INF/classes/sql/board1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/board00/WEB-INF/jsp/form.jsp" afterPath="$PROJECT_DIR$/target/board00/WEB-INF/jsp/form.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sql/board1.xml" afterPath="$PROJECT_DIR$/target/classes/sql/board1.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -74,8 +67,8 @@
           <file leaf-file-name="read.jsp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/read.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+                <state relative-caret-position="609">
+                  <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -162,8 +155,8 @@
               <file leaf-file-name="FileDownload.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/java/com/son/common/FileDownload.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="735">
-                      <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="49" />
+                    <state relative-caret-position="102">
+                      <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
                       <folding>
                         <element signature="imports" expanded="true" />
                       </folding>
@@ -1041,12 +1034,12 @@
       <updated>1492747463212</updated>
       <workItem from="1492747466297" duration="781000" />
       <workItem from="1492748601197" duration="41478000" />
-      <workItem from="1493251540077" duration="26059000" />
+      <workItem from="1493251540077" duration="26281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68318000" />
+    <option name="totallyTimeSpent" value="68540000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1058,7 +1051,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="240" y="198" width="3167" height="1795" extended-state="1" />
+    <frame x="240" y="198" width="3167" height="1795" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1528,16 +1521,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/read.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="609">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/son/common/FileDownload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="49" />
+        <state relative-caret-position="102">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

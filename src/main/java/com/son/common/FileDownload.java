@@ -17,7 +17,7 @@ import java.net.URLEncoder;
 public class FileDownload {
     @RequestMapping("/fileDownload")
     public void fileDownload(HttpServletRequest req, HttpServletResponse res) {
-        String path = "d:\\fileupload\\";
+        String path = "f:\\fileupload\\";
         String fileName = req.getParameter("fileName");
         String downName = req.getParameter("downName");
         String realPath = "";
@@ -33,11 +33,12 @@ public class FileDownload {
         }
 
         realPath = path + downName.substring(0, 4) + "\\" + downName;
-        System.out.println("realPath : "+realPath);
         File file1 = new File(realPath);
 
-        if (!file1.exists())
+        if (!file1.exists()){
+            System.out.println(realPath + "nope");
             return;
+        }
 
         res.setHeader("Content-Disposition", "attachment; file");
 
