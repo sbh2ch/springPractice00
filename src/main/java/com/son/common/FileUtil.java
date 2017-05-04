@@ -46,7 +46,7 @@ public class FileUtil {
         if (file == null || file.getName().equals("") || file.getSize() < 1) {
             return null;
         }
-
+        System.out.println("basePath : " + basePath);
         makeBasePath(basePath);
         String serverFullPath = basePath + fileName;
 

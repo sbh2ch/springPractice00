@@ -15,7 +15,7 @@ import java.net.URLEncoder;
  */
 @Controller
 public class FileDownload {
-    @RequestMapping("fileDownload")
+    @RequestMapping("/fileDownload")
     public void fileDownload(HttpServletRequest req, HttpServletResponse res) {
         String path = "d:\\fileupload\\";
         String fileName = req.getParameter("fileName");
@@ -32,8 +32,8 @@ public class FileDownload {
             e.printStackTrace();
         }
 
-        realPath = path + downName.substring(0, 4) + "/" + downName;
-
+        realPath = path + downName.substring(0, 4) + "\\" + downName;
+        System.out.println("realPath : "+realPath);
         File file1 = new File(realPath);
 
         if (!file1.exists())

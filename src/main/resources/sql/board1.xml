@@ -12,8 +12,11 @@
     </sql>
 
     <insert id="insertBoard" parameterType="com.son.BoardVO">
-        INSERT INTO TBL_BOARD(BRDTITLE, BRDWRITER, BRDMEMO, BRDDATE, BRDHIT, BRDDELETEFLAG)
-        VALUES (#{brdtitle}, #{brdwriter}, #{brdmemo}, NOW(), 0, 'N')
+        <selectKey resultType="String" keyProperty="brdno" order="BEFORE">
+            SELECT IFNULL(MAX(BRDNO),0)+1 FROM TBL_BOARD
+        </selectKey>
+        INSERT INTO TBL_BOARD(BRDNO, BRDTITLE, BRDWRITER, BRDMEMO, BRDDATE, BRDHIT, BRDDELETEFLAG)
+        VALUES (#{brdno}, #{brdtitle}, #{brdwriter}, #{brdmemo}, NOW(), 0, 'N')
     </insert>
 
     <select id="selectBoardList" resultType="com.son.BoardVO" parameterType="com.son.common.SearchVO">

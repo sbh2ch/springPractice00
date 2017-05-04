@@ -44,7 +44,7 @@
                     <a href="fileDownload?fileName=<c:out value="${listview.fileName}"/>&downName=<c:out value="${listview.realName}"/>"><c:out value="${listview.fileName}"/></a>
                     <c:out value="${listview.size2String()}"/><br/>
                 </c:forEach>
-                <input type="file" name="uploadFile" multiple/>
+                <input type="file" name="uploadfile" multiple/>
             </td>
         </tr>
         </tbody>

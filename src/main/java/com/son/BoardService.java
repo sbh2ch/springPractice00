@@ -53,6 +53,7 @@ public class BoardService {
         TransactionStatus status = txManager.getTransaction(def);
         String[] fileNo = req.getParameterValues("fileNo");
         FileUtil fs = new FileUtil();
+
         List<FileVO> fileList = fs.saveAllFiles(boardVO.getUploadfile());
 
         try {

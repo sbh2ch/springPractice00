@@ -12,8 +12,11 @@
     </sql>
 
     <insert id="insertBoard" parameterType="com.son.BoardVO">
-        INSERT INTO TBL_BOARD(BRDTITLE, BRDWRITER, BRDMEMO, BRDDATE, BRDHIT, BRDDELETEFLAG)
-        VALUES (#{brdtitle}, #{brdwriter}, #{brdmemo}, NOW(), 0, 'N')
+        <selectKey resultType="String" keyProperty="brdno" order="BEFORE">
+            SELECT IFNULL(MAX(BRDNO),0)+1 FROM TBL_BOARD
+        </selectKey>
+        INSERT INTO TBL_BOARD(BRDNO, BRDTITLE, BRDWRITER, BRDMEMO, BRDDATE, BRDHIT, BRDDELETEFLAG)
+        VALUES (#{brdno}, #{brdtitle}, #{brdwriter}, #{brdmemo}, NOW(), 0, 'N')
     </insert>
 
     <select id="selectBoardList" resultType="com.son.BoardVO" parameterType="com.son.common.SearchVO">
@@ -53,4 +56,27 @@
         FROM TBL_BOARD
         <include refid="includeBoard"/>
     </select>
+
+    <delete id="deleteBoardFile" parameterType="hashmap">
+        DELETE
+        FROM TBL_BOARDFILE
+        WHERE FILENO IN (
+          <foreach collection="fileNo" item="item" index="index" separator=",">
+              ${item}
+          </foreach>
+        )
+    </delete>
+
+    <insert id="insertBoardFile" parameterType="com.son.common.FileVO">
+        INSERT INTO TBL_BOARDFILE (BRDNO, FILENAME, REALNAME, FILESIZE)
+        VALUES (#{parentPK}, #{fileName}, #{realName}, #{fileSize})
+    </insert>
+
+    <select id="selectBoardFileList" resultType="com.son.common.FileVO" parameterType="String">
+        SELECT FILENO, FILENAME, REALNAME, FILESIZE
+        FROM TBL_BOARDFILE
+        WHERE BRDNO=#{brdno}
+        ORDER BY FILENO DESC
+    </select>
+
 </mapper>
