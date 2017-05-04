@@ -102,4 +102,21 @@ public class BoardService {
     public void readBoard(HttpServletRequest req) {
         boardDAO.readBoard(req.getParameter("brdno"));
     }
+
+    public void insertReply(ReplyVO replyVO) {
+        if(replyVO.getReno() == null || "".equals(replyVO.getReno())){
+            boardDAO.insertReply(replyVO);
+        } else {
+            boardDAO.updateReply(replyVO);
+        }
+    }
+
+    public void deleteReply(String reno) {
+        boardDAO.deleteReply(reno);
+    }
+
+    public List<?> selectBoardReplyList(HttpServletRequest req) {
+        String brdno = req.getParameter("brdno");
+        return boardDAO.selectBoardReplyList(brdno);
+    }
 }

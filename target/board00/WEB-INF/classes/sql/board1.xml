@@ -20,7 +20,9 @@
     </insert>
 
     <select id="selectBoardList" resultType="com.son.BoardVO" parameterType="com.son.common.SearchVO">
-        SELECT BRDNO, BRDTITLE, BRDWRITER, BRDHIT, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE, (SELECT COUNT(*) FROM TBL_BOARDFILE WHERE BRDNO=TB.BRDNO) FILECNT
+        SELECT BRDNO, BRDTITLE, BRDWRITER, BRDHIT, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE,
+        (SELECT COUNT(*) FROM TBL_BOARDFILE WHERE BRDNO=TB.BRDNO) FILECNT,
+        (SELECT COUNT(*) FROM TBL_BOARDREPLY WHERE BRDNO=TB.BRDNO AND REDELETEFLAG='N') REPLYCNT
         FROM TBL_BOARD TB
         <include refid="includeBoard"/>
         ORDER BY BRDNO DESC
@@ -61,9 +63,9 @@
         DELETE
         FROM TBL_BOARDFILE
         WHERE FILENO IN (
-          <foreach collection="fileNo" item="item" index="index" separator=",">
-              ${item}
-          </foreach>
+        <foreach collection="fileNo" item="item" index="index" separator=",">
+            ${item}
+        </foreach>
         )
     </delete>
 
@@ -78,5 +80,32 @@
         WHERE BRDNO=#{brdno}
         ORDER BY FILENO DESC
     </select>
+
+    <select id="selectBoardReplyList" resultType="com.son.ReplyVO" parameterType="String">
+      SELECT BRDNO, RENO, REWRITER, REDELETEFLAG, REMEMO, REDATE
+      FROM TBL_BOARDREPLY
+      WHERE BRDNO=#{brdno} AND REDELETEFLAG='N'
+      ORDER BY RENO
+    </select>
+
+    <insert id="insertReply" parameterType="com.son.ReplyVO">
+        <selectKey resultType="String" keyProperty="reno" order="BEFORE">
+            SELECT IFNULL(MAX(RENO),0)+1 FROM TBL_BOARDREPLY
+        </selectKey>
+        INSERT INTO TBL_BOARDREPLY(BRDNO, RENO, REWRITER, REDELETEFLAG, REMEMO, REDATE)
+        VALUES (#{brdno}, #{reno}, #{rewriter}, 'N', #{rememo}, NOW())
+    </insert>
+
+    <update id="deleteReply" parameterType="String">
+        UPDATE TBL_BOARDREPLY
+        SET REDELETEFLAG='Y'
+        WHERE RENO=#{reno}
+    </update>
+
+    <update id="updateReply" parameterType="com.son.ReplyVO">
+        UPDATE TBL_BOARDREPLY
+        SET REMEMO=#{rememo}
+        WHERE RENO=#{reno}
+    </update>
 
 </mapper>

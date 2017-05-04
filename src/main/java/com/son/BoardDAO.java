@@ -57,4 +57,21 @@ public class BoardDAO {
     public List<?> selectBoardFileList(String param){
         return session.selectList("selectBoardFileList", param);
     }
+
+    public void insertReply(ReplyVO replyVO) {
+        session.insert("insertReply",replyVO);
+    }
+
+    public void updateReply(ReplyVO replyVO) {
+        session.insert("updateReply", replyVO);
+    }
+
+
+    public void deleteReply(String reno) {
+        session.delete("deleteReply", reno);
+    }
+
+    public List<?> selectBoardReplyList(String brdno) {
+        return session.selectList("selectBoardReplyList", brdno);
+    }
 }

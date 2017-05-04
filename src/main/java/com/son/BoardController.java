@@ -40,6 +40,7 @@ public class BoardController {
         service.readBoard(req);
         model.addAttribute("boardInfo", service.selectBoardOne(req));
         model.addAttribute("listview", service.selectBoardFileList(req));
+        model.addAttribute("replylist", service.selectBoardReplyList(req));
 
         return "read";
     }
@@ -58,5 +59,17 @@ public class BoardController {
         service.deleteBoard(model);
 
         return "redirect:home.kosc";
+    }
+
+    @RequestMapping("/replySave")
+    public String boardReplySave(HttpServletRequest req, ReplyVO replyVO) {
+        service.insertReply(replyVO);
+        return "redirect:/board00/boardRead.kosc?brdno=" + replyVO.getBrdno();
+    }
+
+    @RequestMapping("/replyDelete")
+    public String boardReplyDelete(HttpServletRequest req, ReplyVO replyVO){
+        service.deleteReply(replyVO.getReno());
+        return "redirect:/board00/boardRead.kosc?brdno=" + replyVO.getBrdno();
     }
 }

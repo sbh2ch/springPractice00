@@ -47,7 +47,11 @@
         </c:url>
         <tr>
             <td><c:out value="${pageVO.totRow-((pageVO.page-1)*pageVO.displayRowCount+status.index)}"/></td>
-            <td style="max-width: 100px; border: 1px solid black; overflow: hidden; white-space: nowrap; text-overflow: ellipsis"><a href="${link}"><c:out value="${listview.brdtitle}"/></a></td>
+            <td style="max-width: 100px; border: 1px solid black; overflow: hidden; white-space: nowrap; text-overflow: ellipsis"><a href="${link}"><c:out value="${listview.brdtitle}"/></a>
+            <c:if test="${listview.replycnt>0}">
+                (<c:out value="${listview.replycnt}"/>)
+            </c:if>
+            </td>
             <td><c:out value="${listview.brdwriter}"/></td>
             <td><c:out value="${listview.brddate}"/></td>
             <td><c:out value="${listview.brdhit}"/></td>

@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class FileUtil {
 
-    /* file upload */
     public List<FileVO> saveAllFiles(List<MultipartFile> upfiles) {
         String filePath = "f:\\fileupload\\";
         List<FileVO> fileList = new ArrayList<FileVO>();
