@@ -1,5 +1,7 @@
 package com.son;
 
+import com.son.common.FileUtil;
+import com.son.common.FileVO;
 import com.son.common.SearchVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -10,6 +12,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -39,6 +42,7 @@ public class BoardService {
 
         if (brdno != null) {
             model.addAttribute("boardinfo", boardDAO.selectBoardOne(brdno));
+            model.addAttribute("listview", boardDAO.selectBoardFileList(brdno));
         }
     }
 
@@ -47,23 +51,40 @@ public class BoardService {
         DefaultTransactionDefinition def = new DefaultTransactionDefinition();
         def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
         TransactionStatus status = txManager.getTransaction(def);
-
-        System.out.println(boardVO);
+        String[] fileNo = req.getParameterValues("fileNo");
+        FileUtil fs = new FileUtil();
+        List<FileVO> fileList = fs.saveAllFiles(boardVO.getUploadfile());
 
         try {
             if (boardVO.getBrdno() == null || "".equals(boardVO.getBrdno())) {
                 boardDAO.insertBoard(boardVO);
-            System.out.println("insert");
+                System.out.println("insert");
             } else {
                 boardDAO.updateBoard(boardVO);
-            System.out.println("update");
+                System.out.println("update");
             }
+
+            if(fileNo != null){
+                HashMap<String, String[]> fparam = new HashMap<String, String[]>();
+                fparam.put("fileNo", fileNo);
+                boardDAO.deleteBoardFile(fparam);
+            }
+
+            for(FileVO f : fileList){
+                f.setParentPK(boardVO.getBrdno());
+                boardDAO.insertBoardFile(f);
+            }
+
             txManager.commit(status);
         } catch (Exception e) {
-            System.out.println("rollback");
-            e.printStackTrace();
+            System.out.println("데이터 저장 오류"+e.toString());
             txManager.rollback(status);
         }
+    }
+
+    public List<?> selectBoardFileList(HttpServletRequest req){
+        String brdno = req.getParameter("brdno");
+        return boardDAO.selectBoardFileList(brdno);
     }
 
     public void deleteBoard(Model model) {

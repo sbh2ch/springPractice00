@@ -32,6 +32,15 @@
         <td>content</td>
         <td><c:out value="${boardInfo.brdmemo}" escapeXml="false"/></td>
     </tr>
+    <tr>
+        <td>attach</td>
+        <td>
+            <c:forEach var="listview" items="${listview}" varStatus="status">
+                <a href="/fileDownload?fileName=<c:out value="${listview.fileName}"/>&downName=<c:out value="${listview.realName}"/>"><c:out
+                        value="${listview.fileName}"/></a><c:out value="${listview.size2String()}"/><br/>
+            </c:forEach>
+        </td>
+    </tr>
     </tbody>
 </table>
 <a href="#" onclick="history.back()">back</a>

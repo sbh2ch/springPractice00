@@ -39,6 +39,8 @@ public class BoardController {
     public String read(HttpServletRequest req, Model model) {
         service.readBoard(req);
         model.addAttribute("boardInfo", service.selectBoardOne(req));
+        model.addAttribute("listview", service.selectBoardFileList(req));
+
         return "read";
     }
 

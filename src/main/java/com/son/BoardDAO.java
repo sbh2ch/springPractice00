@@ -1,10 +1,13 @@
 package com.son;
 
+import com.son.common.FileVO;
 import com.son.common.SearchVO;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -41,5 +44,17 @@ public class BoardDAO {
 
     public void readBoard(String brdno) {
         session.update("board.updateBoardRead", brdno);
+    }
+
+    public void deleteBoardFile(HashMap<String, String[]> fparam) {
+        session.insert("deleteBoardFile", fparam);
+    }
+
+    public void insertBoardFile(FileVO f) {
+        session.insert("insertBoardFile", f);
+    }
+
+    public List<?> selectBoardFileList(String param){
+        return session.selectList("selectBoardFileList", param);
     }
 }
