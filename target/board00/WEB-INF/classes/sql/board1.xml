@@ -82,19 +82,42 @@
     </select>
 
     <select id="selectBoardReplyList" resultType="com.son.ReplyVO" parameterType="String">
-      SELECT BRDNO, RENO, REWRITER, REDELETEFLAG, REMEMO, REDATE
+      SELECT BRDNO, RENO, REWRITER, REDELETEFLAG, REMEMO, REDATE, REPARENT, REDEPTH, REORDER
       FROM TBL_BOARDREPLY
       WHERE BRDNO=#{brdno} AND REDELETEFLAG='N'
-      ORDER BY RENO
+      ORDER BY REORDER
     </select>
 
     <insert id="insertReply" parameterType="com.son.ReplyVO">
         <selectKey resultType="String" keyProperty="reno" order="BEFORE">
             SELECT IFNULL(MAX(RENO),0)+1 FROM TBL_BOARDREPLY
         </selectKey>
-        INSERT INTO TBL_BOARDREPLY(BRDNO, RENO, REWRITER, REDELETEFLAG, REMEMO, REDATE)
-        VALUES (#{brdno}, #{reno}, #{rewriter}, 'N', #{rememo}, NOW())
+        INSERT INTO TBL_BOARDREPLY(BRDNO, RENO, REWRITER, REDELETEFLAG, REMEMO, REDATE, REORDER, REPARENT, REDEPTH)
+        VALUES (#{brdno}, #{reno}, #{rewriter}, 'N', #{rememo}, NOW(), #{reorder},
+        <choose>
+            <when test="reparent==null">#{reno}, 0</when>
+            <otherwise>#{reparent}, #{redepth}</otherwise>
+        </choose>
+        )
     </insert>
+
+    <select id="selectReplyParent" resultType="com.son.ReplyVO" parameterType="String">
+        SELECT BRDNO, REDEPTH+1 REDEPTH, REORDER
+        FROM TBL_BOARDREPLY
+        WHERE RENO=#{reparent}
+    </select>
+
+    <select id="updateReplyMaxOrder" resultType="Integer" parameterType="String">
+        SELECT IFNULL((MAX(REORDER),0)+1)
+        FROM TBL_BOARDREPLY
+        WHERE BRDNO=#{brdno}
+    </select>
+
+    <select id="selectReplyChild" resultType="Integer" parameterType="String">
+        SELECT COUNT(*)
+        FROM TBL_BOARDREPLY
+        WHERE REPARENT=#{reparent} AND RENO != #{reparent} AND REDELETEFLAG='N'
+    </select>
 
     <update id="deleteReply" parameterType="String">
         UPDATE TBL_BOARDREPLY
@@ -102,10 +125,30 @@
         WHERE RENO=#{reno}
     </update>
 
+    <update id="updateReplyOrder4Delete" parameterType="String">
+        UPDATE TBL_BOARDREPLY TBR1
+         INNER JOIN TBL_BOARDREPLY TBR2 ON TBR2.BRDNO=TBR1.BRDNO AND TBR1.REORDER >TBR2.REORDER AND TBR1.REDELETEFLAG='N'
+           SET TBR1.REORDER = TBR1.REORDER - 1
+         WHERE TBR2.RENO=#{reno}
+    </update>
+
+    <update id="updateReplyOrder" parameterType="com.son.ReplyVO">
+        UPDATE TBL_BOARDREPLY
+        SET REORDER = REORDER + 1
+        WHERE BRDNO = #{brdno} AND REORDER > #{reorder}
+    </update>
+
+    <select id="selectReplyMaxOrder" resultType="Integer" parameterType="String">
+        SELECT IFNULL(MAX(REORDER),0) + 1
+        FROM TBL_BOARDREPLY
+        WHERE BRDNO=#{brdno}
+    </select>
+
     <update id="updateReply" parameterType="com.son.ReplyVO">
         UPDATE TBL_BOARDREPLY
         SET REMEMO=#{rememo}
         WHERE RENO=#{reno}
     </update>
+
 
 </mapper>

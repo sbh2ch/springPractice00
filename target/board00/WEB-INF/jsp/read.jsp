@@ -57,13 +57,16 @@
 </div>
 
 <c:forEach var="replylist" items="${replylist}" varStatus="status">
-    <div style="border: 1px solid gray; width: 600px; padding: 5px; margin-top: 5px;">
+    <div style="border: 1px solid gray; width: 600px; padding: 5px; margin-top: 5px; margin-left: <c:out
+            value="${20*replylist.redepth}"/>px; display: inline-block">
         <c:out value="${replylist.rewriter}"/><c:out value="${replylist.redate}"/>
         <a href="#" onclick="fn_replyDelete('<c:out value="${replylist.reno}"/>')">del</a>
         <a href="#" onclick="fn_replyUpdate('<c:out value="${replylist.reno}"/>')">mod</a>
+        <a href="#" onclick="fn_replyReply('<c:out value="${replylist.reno}"/>')">reply</a>
         <br/>
         <div id="reply<c:out value="${replylist.reno}"/>"><c:out value="${replylist.rememo}"/></div>
     </div>
+    <br/>
 </c:forEach>
 
 <div id="replyDiv" style="width: 99%; display: none;">
@@ -73,6 +76,18 @@
         <textarea name="rememo" rows="3" cols="60" maxlength="500"></textarea>
         <input type="submit" value="save">
         <a href="#" onclick="fn_replyUpdateCancel()">cancel</a>
+    </form>
+</div>
+
+<div id="replyDialog" style="width: 99%; display:none;">
+    <form name="form3" action="replySave" method="post">
+        <input type="hidden" name="brdno" value="<c:out value="${boardInfo.brdno}"/>">
+        <input type="hidden" name="reno">
+        <input type="hidden" name="reparent">
+        writer:<input type="text" name="rewriter" size="20" maxlength="20"><br/>
+        <textarea name="rememo" rows="3" cols="60" maxlength="500"></textarea>
+        <input type="submit" value="save">
+        <a href="#" onclick="fn_replyReplyCancel()">cancel</a>
     </form>
 </div>
 <script>
@@ -88,6 +103,8 @@
 
     var updateReno = updateRememo = null;
     function fn_replyUpdate(reno) {
+        hideDiv("replyDialog");
+
         var form = document.form2;
         var reply = document.getElementById("reply" + reno);
         var replyDiv = document.getElementById("replyDiv");
@@ -109,14 +126,37 @@
     }
 
     function fn_replyUpdateCancel() {
-        var form = document.form2;
-        var replyDiv = document.getElementById("replyDiv");
-        document.body.appendChild(replyDiv);
-        replyDiv.style.display = "none";
+        hideDiv("replyDiv");
 
         var oldReno = document.getElementById("reply" + updateReno);
         oldReno.innerText = updateRememo;
         updateReno = updateRememo = null;
+    }
+
+    function hideDiv(id) {
+        var div = document.getElementById(id);
+        div.style.display = "none";
+        document.body.appendChild(div);
+    }
+
+    function fn_replyReplyCancel() {
+        hideDiv("replyDialog");
+    }
+
+    function fn_replyReply(reno) {
+        var form = document.form3;
+        var reply = document.getElementById("reply" + reno);
+        var replyDia = document.getElementById("replyDialog");
+        replyDia.style.display = "";
+
+        if(updateReno){
+            fn_replyUpdateCancel();
+        }
+
+        form.rememo.value="";
+        form.reparent.value=reno;
+        reply.appendChild(replyDia);
+        form.rewriter.focus();
     }
 </script>
 </body>

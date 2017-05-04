@@ -64,12 +64,15 @@ public class BoardController {
     @RequestMapping("/replySave")
     public String boardReplySave(HttpServletRequest req, ReplyVO replyVO) {
         service.insertReply(replyVO);
-        return "redirect:/board00/boardRead.kosc?brdno=" + replyVO.getBrdno();
+        return "redirect:boardRead.kosc?brdno=" + replyVO.getBrdno();
     }
 
     @RequestMapping("/replyDelete")
     public String boardReplyDelete(HttpServletRequest req, ReplyVO replyVO){
-        service.deleteReply(replyVO.getReno());
-        return "redirect:/board00/boardRead.kosc?brdno=" + replyVO.getBrdno();
+        if(!service.deleteReply(replyVO.getReno())){
+            return "deleteFailure";
+        }
+
+        return "redirect:boardRead.kosc?brdno=" + replyVO.getBrdno();
     }
 }

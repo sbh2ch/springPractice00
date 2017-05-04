@@ -65,25 +65,25 @@ public class BoardService {
                 System.out.println("update");
             }
 
-            if(fileNo != null){
+            if (fileNo != null) {
                 HashMap<String, String[]> fparam = new HashMap<String, String[]>();
                 fparam.put("fileNo", fileNo);
                 boardDAO.deleteBoardFile(fparam);
             }
 
-            for(FileVO f : fileList){
+            for (FileVO f : fileList) {
                 f.setParentPK(boardVO.getBrdno());
                 boardDAO.insertBoardFile(f);
             }
 
             txManager.commit(status);
         } catch (Exception e) {
-            System.out.println("데이터 저장 오류"+e.toString());
+            System.out.println("데이터 저장 오류" + e.toString());
             txManager.rollback(status);
         }
     }
 
-    public List<?> selectBoardFileList(HttpServletRequest req){
+    public List<?> selectBoardFileList(HttpServletRequest req) {
         String brdno = req.getParameter("brdno");
         return boardDAO.selectBoardFileList(brdno);
     }
@@ -104,15 +104,31 @@ public class BoardService {
     }
 
     public void insertReply(ReplyVO replyVO) {
-        if(replyVO.getReno() == null || "".equals(replyVO.getReno())){
+        if (replyVO.getReno() == null || "".equals(replyVO.getReno())) {
+            if (replyVO.getReparent() != null) {
+                ReplyVO replyInfo = boardDAO.selectReplyParent(replyVO.getReparent());
+                replyVO.setRedepth(replyInfo.getRedepth());
+                replyVO.setReorder(replyInfo.getReorder());
+                boardDAO.updateReplyOrder(replyInfo);
+            } else {
+                Integer reorder = boardDAO.selectReplyMaxOrder(replyVO.getBrdno());
+                replyVO.setReorder(reorder);
+            }
             boardDAO.insertReply(replyVO);
         } else {
             boardDAO.updateReply(replyVO);
         }
     }
 
-    public void deleteReply(String reno) {
+    public boolean deleteReply(String reno) {
+        Integer cnt = boardDAO.selectReplyChild(reno);
+
+        if (cnt > 0) {
+            return false;
+        }
         boardDAO.deleteReply(reno);
+
+        return true;
     }
 
     public List<?> selectBoardReplyList(HttpServletRequest req) {

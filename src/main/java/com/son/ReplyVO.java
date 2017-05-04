@@ -10,8 +10,35 @@ public class ReplyVO {
     private String redeleteflag;
     private String rememo;
     private String redate;
+    private String reparent;
+    private String redepth;
+    private Integer reorder;
 
     public ReplyVO() {
+    }
+
+    public String getReparent() {
+        return reparent;
+    }
+
+    public void setReparent(String reparent) {
+        this.reparent = reparent;
+    }
+
+    public String getRedepth() {
+        return redepth;
+    }
+
+    public void setRedepth(String redepth) {
+        this.redepth = redepth;
+    }
+
+    public Integer getReorder() {
+        return reorder;
+    }
+
+    public void setReorder(Integer reorder) {
+        this.reorder = reorder;
     }
 
     public String getBrdno() {
