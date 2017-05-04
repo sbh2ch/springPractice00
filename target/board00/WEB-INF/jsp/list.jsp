@@ -28,6 +28,7 @@
         <col width="15%"/>
         <col width="15%"/>
         <col width="10%"/>
+        <col width="10%"/>
     </colgroup>
     <thead>
     <tr>
@@ -36,6 +37,7 @@
         <th>writer</th>
         <th>date</th>
         <th>hit</th>
+        <th>attach</th>
     </tr>
     </thead>
     <tbody>
@@ -44,11 +46,12 @@
             <c:param name="brdno" value="${listview.brdno}"/>
         </c:url>
         <tr>
-            <td><c:out value="${listview.brdno}"/></td>
-            <td><a href="${link}"><c:out value="${listview.brdtitle}"/></a></td>
+            <td><c:out value="${pageVO.totRow-((pageVO.page-1)*pageVO.displayRowCount+status.index)}"/></td>
+            <td style="max-width: 100px; border: 1px solid black; overflow: hidden; white-space: nowrap; text-overflow: ellipsis"><a href="${link}"><c:out value="${listview.brdtitle}"/></a></td>
             <td><c:out value="${listview.brdwriter}"/></td>
             <td><c:out value="${listview.brddate}"/></td>
             <td><c:out value="${listview.brdhit}"/></td>
+            <td><c:out value="${listview.filecnt}"/></td>
         </tr>
     </c:forEach>
     </tbody>

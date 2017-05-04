@@ -20,8 +20,8 @@
     </insert>
 
     <select id="selectBoardList" resultType="com.son.BoardVO" parameterType="com.son.common.SearchVO">
-        SELECT BRDNO, BRDTITLE, BRDWRITER, BRDHIT, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE
-        FROM TBL_BOARD
+        SELECT BRDNO, BRDTITLE, BRDWRITER, BRDHIT, DATE_FORMAT(BRDDATE, '%Y-%m-%d') BRDDATE, (SELECT COUNT(*) FROM TBL_BOARDFILE WHERE BRDNO=TB.BRDNO) FILECNT
+        FROM TBL_BOARD TB
         <include refid="includeBoard"/>
         ORDER BY BRDNO DESC
         LIMIT ${rowStart-1}, 10

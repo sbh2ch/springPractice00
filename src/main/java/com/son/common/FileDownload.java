@@ -25,14 +25,11 @@ public class FileDownload {
         if (fileName == null || "".equals(fileName)) {
             fileName = downName;
         }
-        System.out.println("before filename "+fileName);
         try {
-            fileName = URLEncoder.encode(fileName, "UTF-8").replaceAll("\\+","%20");
+            fileName = URLEncoder.encode(fileName, "UTF-8").replaceAll("\\+", "%20");
         } catch (Exception e) {
-            System.out.println("error!!!@@");
             e.printStackTrace();
         }
-        System.out.println("after filename "+fileName);
 
         realPath = path + downName.substring(0, 4) + "\\" + downName;
         File file1 = new File(realPath);
@@ -49,13 +46,13 @@ public class FileDownload {
             int ncount = 0;
             byte[] bytes = new byte[512];
 
-            while ((ncount = fis.read(bytes)) != -1 ) {
+            while ((ncount = fis.read(bytes)) != -1) {
                 os.write(bytes, 0, ncount);
             }
             fis.close();
             os.close();
         } catch (Exception ex) {
-            System.out.println("FileNotFoundException");
+            System.out.println("FileNotFoundException : " + ex.toString());
         }
     }
 }
