@@ -41,11 +41,11 @@
         WHERE BRDNO = #{brdno} AND BRDDELETEFLAG = 'N'
     </update>
 
-    <delete id="deleteBoard" parameterType="String">
+    <update id="deleteBoard" parameterType="String">
         UPDATE TBL_BOARD
         SET BRDDELETEFLAG='Y'
         WHERE BRDNO = #{brdno}
-    </delete>
+    </update>
 
     <update id="updateBoardRead" parameterType="String">
         UPDATE TBL_BOARD
