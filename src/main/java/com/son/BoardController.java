@@ -37,10 +37,11 @@ public class BoardController {
 
     @RequestMapping("/boardRead.kosc")
     public String read(HttpServletRequest req, Model model) {
+        String brdno = req.getParameter("brdno");
         service.readBoard(req);
-        model.addAttribute("boardInfo", service.selectBoardOne(req));
-        model.addAttribute("listview", service.selectBoardFileList(req));
-        model.addAttribute("replylist", service.selectBoardReplyList(req));
+        model.addAttribute("boardInfo", service.selectBoardOne(brdno));
+        model.addAttribute("listview", service.selectBoardFileList(brdno));
+        model.addAttribute("replylist", service.selectBoardReplyList(brdno));
 
         return "read";
     }

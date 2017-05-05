@@ -30,8 +30,7 @@ public class BoardService {
         return boardDAO.selectBoardList(searchVO);
     }
 
-    public BoardVO selectBoardOne(HttpServletRequest req) {
-        String brdno = req.getParameter("brdno");
+    public BoardVO selectBoardOne(String brdno) {
         return boardDAO.selectBoardOne(brdno);
     }
 
@@ -83,8 +82,7 @@ public class BoardService {
         }
     }
 
-    public List<?> selectBoardFileList(HttpServletRequest req) {
-        String brdno = req.getParameter("brdno");
+    public List<?> selectBoardFileList(String brdno) {
         return boardDAO.selectBoardFileList(brdno);
     }
 
@@ -131,8 +129,7 @@ public class BoardService {
         return true;
     }
 
-    public List<?> selectBoardReplyList(HttpServletRequest req) {
-        String brdno = req.getParameter("brdno");
+    public List<?> selectBoardReplyList(String brdno) {
         return boardDAO.selectBoardReplyList(brdno);
     }
 }
