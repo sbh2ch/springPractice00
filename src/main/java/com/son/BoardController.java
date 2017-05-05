@@ -29,8 +29,9 @@ public class BoardController {
 
     @RequestMapping("/boardForm.kosc")
     public String form(HttpServletRequest req, Model model) {
-        model.addAttribute("req", req);
-        service.writeForm(model);
+        String brdno = req.getParameter("brdno");
+        model.addAttribute("listview", service.selectBoardOne(brdno));
+        model.addAttribute("listview",service.selectBoardFileList(brdno));
 
         return "form";
     }
@@ -47,29 +48,29 @@ public class BoardController {
     }
 
     @RequestMapping("/boardSave.kosc")
-    public String save(HttpServletRequest req, Model model, BoardVO boardVO) {
-        model.addAttribute("req", req);
-        service.write(model, boardVO);
+    public String save(HttpServletRequest req, BoardVO boardVO) {
+        String[] fileNo = req.getParameterValues("fileNo");
+        service.write(fileNo, boardVO);
 
         return "redirect:home.kosc";
     }
 
     @RequestMapping("/boardDelete.kosc")
-    public String delete(HttpServletRequest req, Model model) {
-        model.addAttribute("req", req);
-        service.deleteBoard(model);
+    public String delete(HttpServletRequest req) {
+        String brdno = req.getParameter("brdno");
+        service.deleteBoard(brdno);
 
         return "redirect:home.kosc";
     }
 
     @RequestMapping("/replySave")
-    public String boardReplySave(HttpServletRequest req, ReplyVO replyVO) {
+    public String boardReplySave(ReplyVO replyVO) {
         service.insertReply(replyVO);
         return "redirect:boardRead.kosc?brdno=" + replyVO.getBrdno();
     }
 
     @RequestMapping("/replyDelete")
-    public String boardReplyDelete(HttpServletRequest req, ReplyVO replyVO){
+    public String boardReplyDelete(ReplyVO replyVO){
         if(!service.deleteReply(replyVO.getReno())){
             return "deleteFailure";
         }

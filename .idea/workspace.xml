@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="337fa5d0-fb93-4990-b536-5aef8dc4948e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/son/BoardController.java" afterPath="$PROJECT_DIR$/src/main/java/com/son/BoardController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/son/BoardService.java" afterPath="$PROJECT_DIR$/src/main/java/com/son/BoardService.java" />
     </list>
@@ -126,17 +127,19 @@
           <file leaf-file-name="BoardService.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+                <state relative-caret-position="420">
+                  <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#983#984#0" expanded="true" />
-                    <element signature="e#1036#1037#0" expanded="true" />
-                    <element signature="e#2360#2378#0" expanded="true" />
-                    <element signature="e#2884#2885#0" expanded="true" />
-                    <element signature="e#2942#2943#0" expanded="true" />
-                    <element signature="e#4387#4388#0" expanded="true" />
-                    <element signature="e#4446#4447#0" expanded="true" />
+                    <element signature="e#946#947#0" expanded="true" />
+                    <element signature="e#999#1000#0" expanded="true" />
+                    <element signature="e#1811#1829#0" expanded="true" />
+                    <element signature="e#2335#2336#0" expanded="true" />
+                    <element signature="e#2393#2394#0" expanded="true" />
+                    <element signature="e#2438#2439#0" expanded="true" />
+                    <element signature="e#2481#2482#0" expanded="true" />
+                    <element signature="e#3708#3709#0" expanded="true" />
+                    <element signature="e#3767#3768#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -164,8 +167,8 @@
           <file leaf-file-name="BoardController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="723">
-                  <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+                <state relative-caret-position="576">
+                  <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="62" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -225,6 +228,8 @@
       <find>selectBoardFileList</find>
       <find>selectBoardReplyList</find>
       <find>writeForm</find>
+      <find>write</find>
+      <find>deleteBoard</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -985,12 +990,12 @@
       <updated>1492747463212</updated>
       <workItem from="1492747466297" duration="781000" />
       <workItem from="1492748601197" duration="41478000" />
-      <workItem from="1493251540077" duration="47326000" />
+      <workItem from="1493251540077" duration="49029000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89585000" />
+    <option name="totallyTimeSpent" value="91288000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1164,13 +1169,15 @@
           <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#2360#2378#0" expanded="true" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#2942#2943#0" expanded="true" />
-            <element signature="e#4387#4388#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#1811#1829#0" expanded="true" />
+            <element signature="e#2335#2336#0" expanded="true" />
+            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2481#2482#0" expanded="true" />
+            <element signature="e#3708#3709#0" expanded="true" />
+            <element signature="e#3767#3768#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1550,8 +1557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="45" column="22" lean-forward="true" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        <state relative-caret-position="576">
+          <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1560,17 +1567,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        <state relative-caret-position="420">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#2360#2378#0" expanded="true" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#2942#2943#0" expanded="true" />
-            <element signature="e#4387#4388#0" expanded="true" />
-            <element signature="e#4446#4447#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#1811#1829#0" expanded="true" />
+            <element signature="e#2335#2336#0" expanded="true" />
+            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2481#2482#0" expanded="true" />
+            <element signature="e#3708#3709#0" expanded="true" />
+            <element signature="e#3767#3768#0" expanded="true" />
           </folding>
         </state>
       </provider>

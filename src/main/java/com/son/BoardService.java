@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
-import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -34,23 +33,11 @@ public class BoardService {
         return boardDAO.selectBoardOne(brdno);
     }
 
-    public void writeForm(Model model) {
-        HttpServletRequest req = (HttpServletRequest) model.asMap().get("req");
-
-        String brdno = req.getParameter("brdno");
-
-        if (brdno != null) {
-            model.addAttribute("boardinfo", boardDAO.selectBoardOne(brdno));
-            model.addAttribute("listview", boardDAO.selectBoardFileList(brdno));
-        }
-    }
-
-    public void write(Model model, BoardVO boardVO) {
-        HttpServletRequest req = (HttpServletRequest) model.asMap().get("req");
+    public void write(String[] fileNo, BoardVO boardVO) {
         DefaultTransactionDefinition def = new DefaultTransactionDefinition();
         def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
         TransactionStatus status = txManager.getTransaction(def);
-        String[] fileNo = req.getParameterValues("fileNo");
+
         FileUtil fs = new FileUtil();
 
         List<FileVO> fileList = fs.saveAllFiles(boardVO.getUploadfile());
@@ -86,10 +73,7 @@ public class BoardService {
         return boardDAO.selectBoardFileList(brdno);
     }
 
-    public void deleteBoard(Model model) {
-        HttpServletRequest req = (HttpServletRequest) model.asMap().get("req");
-        String brdno = req.getParameter("brdno");
-
+    public void deleteBoard(String brdno) {
         boardDAO.deleteBoard(brdno);
     }
 
