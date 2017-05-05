@@ -45,10 +45,8 @@ public class BoardService {
         try {
             if (boardVO.getBrdno() == null || "".equals(boardVO.getBrdno())) {
                 boardDAO.insertBoard(boardVO);
-                System.out.println("insert");
             } else {
                 boardDAO.updateBoard(boardVO);
-                System.out.println("update");
             }
 
             if (fileNo != null) {
@@ -81,8 +79,8 @@ public class BoardService {
         return boardDAO.selectBoardCount(searchVO);
     }
 
-    public void readBoard(HttpServletRequest req) {
-        boardDAO.readBoard(req.getParameter("brdno"));
+    public void readBoard(String brdno) {
+        boardDAO.readBoard(brdno);
     }
 
     public void insertReply(ReplyVO replyVO) {
