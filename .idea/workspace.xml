@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="337fa5d0-fb93-4990-b536-5aef8dc4948e" name="Default" comment="" />
+    <list default="true" id="337fa5d0-fb93-4990-b536-5aef8dc4948e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/son/MvcController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,11 +72,33 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BoardController.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BoardController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="24">
-                  <caret line="21" column="67" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="21" selection-end-column="67" />
+                <state relative-caret-position="309">
+                  <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="273">
+                  <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MvcController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/son/MvcController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -109,11 +135,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="board1.xml" pinned="false" current-in-tab="false">
+          <file leaf-file-name="board1.xml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/resources/sql/board1.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="639">
-                  <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+                <state relative-caret-position="2079">
+                  <caret line="99" column="17" lean-forward="true" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
                   <folding>
                     <marker date="1493981308719" expanded="true" signature="744:914" ph="INSERT INTO TBL_BOARD... " />
                     <marker date="1493981308719" expanded="true" signature="765:914" ph="(BRDTITLE, B... " />
@@ -186,11 +212,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BoardService.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BoardService.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+                <state relative-caret-position="309">
+                  <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#1673#1691#0" expanded="true" />
@@ -231,8 +257,8 @@
         <option value="spring-beans.schema" />
         <option value="FxmlFile" />
         <option value="Tag Library Descriptor" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -296,6 +322,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/son/BoardService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/sql/board1.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/son/BoardController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/son/MvcController.java" />
       </list>
     </option>
   </component>
@@ -320,8 +348,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2889" />
-    <option name="y" value="139" />
+    <option name="x" value="243" />
+    <option name="y" value="247" />
     <option name="width" value="2745" />
     <option name="height" value="1801" />
   </component>
@@ -430,48 +458,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="board00" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="board00" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -496,36 +482,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="son" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="board00" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="board00" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="son" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -540,8 +496,13 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="sett&#9;ACTION&#9;Database.Settings&#10;setting&#9;ACTION&#9;Database.Settings" />
+    <property name="SearchEverywhereHistoryKey" value="Remote &#9;ACTION&#9;WebDeployment.BrowseServers&#10;sett&#9;ACTION&#9;Database.Settings&#10;setting&#9;ACTION&#9;Database.Settings" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1023,7 +984,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95353000" />
+    <option name="totallyTimeSpent" value="101873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1035,11 +996,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2889" y="139" width="2745" height="1801" extended-state="0" />
-    <editor active="true" />
+    <frame x="243" y="247" width="2745" height="1801" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32590362" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32533014" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1051,9 +1011,9 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1206454" sideWeight="0.4968051" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14521453" sideWeight="0.4968051" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1206454" sideWeight="0.50319487" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14521453" sideWeight="0.50319487" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1068,6 +1028,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296663" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1108,27 +1069,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/son/common/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#440#448#0" expanded="true" />
-            <element signature="e#2089#2090#0" expanded="true" />
-            <element signature="e#2149#2150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1552,46 +1492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/board1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-          <folding>
-            <marker date="1493981308719" expanded="true" signature="744:914" ph="INSERT INTO TBL_BOARD... " />
-            <marker date="1493981308719" expanded="true" signature="765:914" ph="(BRDTITLE, B... " />
-            <marker date="1493981308719" expanded="true" signature="1041:1391" ph="SELECT BRDNO... TBL_BOARD" />
-            <marker date="1493981308719" expanded="true" signature="1041:1423" ph="SELECT BRDNO... TBL_BOARD" />
-            <marker date="1493981308719" expanded="true" signature="1135:1190" ph="SELECT COUNT... TBL_BOARDFILE" />
-            <marker date="1493981308719" expanded="true" signature="1210:1287" ph="SELECT COUNT... TBL_BOARDREPLY" />
-            <marker date="1493981308719" expanded="true" signature="1532:1670" ph="SELECT BRDNO... TBL_BOARD" />
-            <marker date="1493981308719" expanded="true" signature="1532:1694" ph="SELECT BRDNO... TBL_BOARD" />
-            <marker date="1493981308719" expanded="true" signature="1780:1909" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="1780:1934" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="2011:2088" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="2057:2088" ph="DELETE FROM " />
-            <marker date="1493981308719" expanded="true" signature="2169:2248" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="2368:2406" ph="SELECT COUNT... TBL_BOARD" />
-            <marker date="1493981308719" expanded="true" signature="2368:2415" ph="SELECT COUNT... TBL_BOARD" />
-            <marker date="1493981308719" expanded="true" signature="2368:2446" ph="SELECT COUNT... TBL_BOARD" />
-            <marker date="1493981308719" expanded="true" signature="2528:2714" ph="DELETE FROM " />
-            <marker date="1493981308719" expanded="true" signature="2810:2941" ph="INSERT INTO TBL_BOARDFILE... " />
-            <marker date="1493981308719" expanded="true" signature="3061:3189" ph="SELECT FILEN... TBL_BOARDFILE" />
-            <marker date="1493981308719" expanded="true" signature="3302:3480" ph="SELECT BRDNO... TBL_BOARDREPLY" />
-            <marker date="1493981308719" expanded="true" signature="3302:3485" ph="SELECT BRDNO... TBL_BOARDREPLY" />
-            <marker date="1493981308719" expanded="true" signature="4191:4204" ph="SELECT BRDNO... " />
-            <marker date="1493981308719" expanded="true" signature="4191:4290" ph="SELECT BRDNO... TBL_BOARDREPLY" />
-            <marker date="1493981308719" expanded="true" signature="4396:4486" ph="SELECT IFNUL... TBL_BOARDREPLY" />
-            <marker date="1493981308719" expanded="true" signature="4589:4712" ph="SELECT COUNT... TBL_BOARDREPLY" />
-            <marker date="1493981308719" expanded="true" signature="4789:4866" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="4955:5183" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="5274:5385" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="5491:5581" ph="SELECT IFNUL... TBL_BOARDREPLY" />
-            <marker date="1493981308719" expanded="true" signature="5667:5731" ph="UPDATE TBL_B... " />
-            <marker date="1493981308719" expanded="true" signature="5667:5744" ph="UPDATE TBL_B... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/son/common/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
@@ -1632,8 +1532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+        <state relative-caret-position="309">
+          <caret line="77" column="13" lean-forward="false" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1673#1691#0" expanded="true" />
@@ -1649,10 +1549,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/board1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2079">
+          <caret line="99" column="17" lean-forward="true" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+          <folding>
+            <marker date="1493981308719" expanded="true" signature="744:914" ph="INSERT INTO TBL_BOARD... " />
+            <marker date="1493981308719" expanded="true" signature="765:914" ph="(BRDTITLE, B... " />
+            <marker date="1493981308719" expanded="true" signature="1041:1391" ph="SELECT BRDNO... TBL_BOARD" />
+            <marker date="1493981308719" expanded="true" signature="1041:1423" ph="SELECT BRDNO... TBL_BOARD" />
+            <marker date="1493981308719" expanded="true" signature="1135:1190" ph="SELECT COUNT... TBL_BOARDFILE" />
+            <marker date="1493981308719" expanded="true" signature="1210:1287" ph="SELECT COUNT... TBL_BOARDREPLY" />
+            <marker date="1493981308719" expanded="true" signature="1532:1670" ph="SELECT BRDNO... TBL_BOARD" />
+            <marker date="1493981308719" expanded="true" signature="1532:1694" ph="SELECT BRDNO... TBL_BOARD" />
+            <marker date="1493981308719" expanded="true" signature="1780:1909" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="1780:1934" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="2011:2088" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="2057:2088" ph="DELETE FROM " />
+            <marker date="1493981308719" expanded="true" signature="2169:2248" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="2368:2406" ph="SELECT COUNT... TBL_BOARD" />
+            <marker date="1493981308719" expanded="true" signature="2368:2415" ph="SELECT COUNT... TBL_BOARD" />
+            <marker date="1493981308719" expanded="true" signature="2368:2446" ph="SELECT COUNT... TBL_BOARD" />
+            <marker date="1493981308719" expanded="true" signature="2528:2714" ph="DELETE FROM " />
+            <marker date="1493981308719" expanded="true" signature="2810:2941" ph="INSERT INTO TBL_BOARDFILE... " />
+            <marker date="1493981308719" expanded="true" signature="3061:3189" ph="SELECT FILEN... TBL_BOARDFILE" />
+            <marker date="1493981308719" expanded="true" signature="3302:3480" ph="SELECT BRDNO... TBL_BOARDREPLY" />
+            <marker date="1493981308719" expanded="true" signature="3302:3485" ph="SELECT BRDNO... TBL_BOARDREPLY" />
+            <marker date="1493981308719" expanded="true" signature="4191:4204" ph="SELECT BRDNO... " />
+            <marker date="1493981308719" expanded="true" signature="4191:4290" ph="SELECT BRDNO... TBL_BOARDREPLY" />
+            <marker date="1493981308719" expanded="true" signature="4396:4486" ph="SELECT IFNUL... TBL_BOARDREPLY" />
+            <marker date="1493981308719" expanded="true" signature="4589:4712" ph="SELECT COUNT... TBL_BOARDREPLY" />
+            <marker date="1493981308719" expanded="true" signature="4789:4866" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="4955:5183" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="5274:5385" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="5491:5581" ph="SELECT IFNUL... TBL_BOARDREPLY" />
+            <marker date="1493981308719" expanded="true" signature="5667:5731" ph="UPDATE TBL_B... " />
+            <marker date="1493981308719" expanded="true" signature="5667:5744" ph="UPDATE TBL_B... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/son/BoardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="21" column="67" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="21" selection-end-column="67" />
+        <state relative-caret-position="309">
+          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/son/MvcController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
