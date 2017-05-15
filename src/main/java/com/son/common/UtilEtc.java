@@ -4,9 +4,10 @@ package com.son.common;
  * Created by kiost on 2017-04-24.
  */
 public class UtilEtc {
+    private static final String CharSet = "UTF-8";
     public static String getShortString(String str, Integer len) {
         try {
-            if (str.getBytes("UTF-8").length > len) {
+            if (str.getBytes(CharSet).length > len) {
                 str = strCut(str, len) + "...";
             }
         } catch (Exception e) {
@@ -25,7 +26,7 @@ public class UtilEtc {
         int nlengthPrev = 0;
 
         try {
-            byte[] bytes = rval.getBytes("UTF-8");
+            byte[] bytes = rval.getBytes(CharSet);
 
             int jcount = 0;
             if (nlengthPrev > 0) {
@@ -65,7 +66,7 @@ public class UtilEtc {
                     ++jcount;
                 }
             }
-            rval = new String(bytes, rrrF, rrrL, "UTF-8");
+            rval = new String(bytes, rrrF, rrrL, CharSet);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,5 +1,5 @@
 projectKey=com.son:board00
 serverUrl=http://localhost:9000
 dashboardUrl=http://localhost:9000/dashboard/index/com.son:board00
-ceTaskId=AVwBfHvY1_gTqUon-GNS
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AVwBfHvY1_gTqUon-GNS
+ceTaskId=AVwJeGYq1_gTqUon-GNY
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVwJeGYq1_gTqUon-GNY

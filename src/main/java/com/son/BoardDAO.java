@@ -6,9 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 
 /**
@@ -19,7 +18,7 @@ public class BoardDAO {
     @Autowired
     private SqlSession session;
 
-    public List<?> selectBoardList(SearchVO searchVO) {
+    public List<? extends BoardVO> selectBoardList(SearchVO searchVO) {
         return session.selectList("board.selectBoardList", searchVO);
     }
 
@@ -47,7 +46,7 @@ public class BoardDAO {
         session.update("board.updateBoardRead", brdno);
     }
 
-    public void deleteBoardFile(HashMap<String, String[]> fparam) {
+    public void deleteBoardFile(Map<String, String[]> fparam) {
         session.insert("deleteBoardFile", fparam);
     }
 
@@ -55,7 +54,7 @@ public class BoardDAO {
         session.insert("insertBoardFile", f);
     }
 
-    public List<?> selectBoardFileList(String param) {
+    public List<FileVO> selectBoardFileList(String param) {
         return session.selectList("selectBoardFileList", param);
     }
 
@@ -73,7 +72,7 @@ public class BoardDAO {
         session.delete("deleteReply", reno);
     }
 
-    public List<?> selectBoardReplyList(String brdno) {
+    public List<ReplyVO> selectBoardReplyList(String brdno) {
         return session.selectList("selectBoardReplyList", brdno);
     }
 

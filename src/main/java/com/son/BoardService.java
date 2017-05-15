@@ -24,7 +24,7 @@ public class BoardService {
     @Autowired
     private DataSourceTransactionManager txManager;
 
-    public List<?> selectBoardList(SearchVO searchVO) {
+    public List<? extends BoardVO> selectBoardList(SearchVO searchVO) {
         return boardDAO.selectBoardList(searchVO);
     }
 
@@ -66,7 +66,7 @@ public class BoardService {
         }
     }
 
-    public List<?> selectBoardFileList(String brdno) {
+    public List<? extends FileVO> selectBoardFileList(String brdno) {
         return boardDAO.selectBoardFileList(brdno);
     }
 
@@ -110,7 +110,7 @@ public class BoardService {
         return true;
     }
 
-    public List<?> selectBoardReplyList(String brdno) {
+    public List<? extends ReplyVO> selectBoardReplyList(String brdno) {
         return boardDAO.selectBoardReplyList(brdno);
     }
 }

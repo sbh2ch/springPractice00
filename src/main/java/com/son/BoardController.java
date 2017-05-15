@@ -30,7 +30,6 @@ public class BoardController {
     @RequestMapping("/boardForm.kosc")
     public String form(HttpServletRequest req, Model model) {
         String brdno = req.getParameter("brdno");
-        System.out.println("brdno : "+brdno);
         model.addAttribute("boardinfo", service.selectBoardOne(brdno));
         model.addAttribute("listview",service.selectBoardFileList(brdno));
 
@@ -51,8 +50,6 @@ public class BoardController {
     @RequestMapping("/boardSave.kosc")
     public String save(HttpServletRequest req, BoardVO boardVO) {
         String[] fileNo = req.getParameterValues("fileNo");
-        System.out.println("fileNo : "+fileNo);
-        System.out.println("multipart files : " + boardVO.getUploadfile());
         service.write(fileNo, boardVO);
 
         return "redirect:home.kosc";

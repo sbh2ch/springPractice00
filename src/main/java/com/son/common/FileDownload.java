@@ -1,5 +1,6 @@
 package com.son.common;
 
+import com.mysql.jdbc.log.Log4JLogger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,7 +29,7 @@ public class FileDownload {
         try {
             fileName = URLEncoder.encode(fileName, "UTF-8").replaceAll("\\+", "%20");
         } catch (Exception e) {
-            e.printStackTrace();
+
         }
 
         realPath = path + downName.substring(0, 4) + "\\" + downName;
