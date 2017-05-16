@@ -1,17 +1,26 @@
 package com.son.common;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by kiost on 2017-04-24.
  */
 public class UtilEtc {
-    private static final String CharSet = "UTF-8";
+    private static final String CHARSET = "UTF-8";
+    private static final Logger LOGGER = LoggerFactory.getLogger(UtilEtc.class);
+
+    private UtilEtc() {
+        /* private constructor */
+    }
+
     public static String getShortString(String str, Integer len) {
         try {
-            if (str.getBytes(CharSet).length > len) {
+            if (str.getBytes(CHARSET).length > len) {
                 str = strCut(str, len) + "...";
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error(e.toString());
         }
 
         return str;
@@ -26,7 +35,7 @@ public class UtilEtc {
         int nlengthPrev = 0;
 
         try {
-            byte[] bytes = rval.getBytes(CharSet);
+            byte[] bytes = rval.getBytes(CHARSET);
 
             int jcount = 0;
             if (nlengthPrev > 0) {
@@ -66,9 +75,9 @@ public class UtilEtc {
                     ++jcount;
                 }
             }
-            rval = new String(bytes, rrrF, rrrL, CharSet);
+            rval = new String(bytes, rrrF, rrrL, CHARSET);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error(e.toString());
         }
 
         return rval;

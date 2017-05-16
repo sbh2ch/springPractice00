@@ -15,6 +15,7 @@ public class ReplyVO {
     private Integer reorder;
 
     public ReplyVO() {
+        /* default constructor */
     }
 
     public String getReparent() {

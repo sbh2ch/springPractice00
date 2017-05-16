@@ -18,7 +18,7 @@ public class BoardDAO {
     @Autowired
     private SqlSession session;
 
-    public List<? extends BoardVO> selectBoardList(SearchVO searchVO) {
+    public List<BoardVO> selectBoardList(SearchVO searchVO) {
         return session.selectList("board.selectBoardList", searchVO);
     }
 

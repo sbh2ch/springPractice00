@@ -9,10 +9,19 @@ import java.util.List;
  * Created by kiost on 2017-04-21.
  */
 public class BoardVO {
-    private String brdno, brdtitle, brdwriter, brdmemo, brddate, brdhit, brddeleteflag, filecnt, replycnt;
+    private String brdno;
+    private String brdtitle;
+    private String brdwriter;
+    private String brdmemo;
+    private String brddate;
+    private String brdhit;
+    private String brddeleteflag;
+    private String filecnt;
+    private String replycnt;
     private List<MultipartFile> uploadfile;
 
     public BoardVO() {
+        /* default constructor */
     }
 
     public String getReplycnt() {

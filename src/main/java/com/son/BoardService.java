@@ -3,6 +3,8 @@ package com.son;
 import com.son.common.FileUtil;
 import com.son.common.FileVO;
 import com.son.common.SearchVO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Service;
@@ -18,13 +20,15 @@ import java.util.List;
  */
 @Service
 public class BoardService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BoardService.class);
+
     @Autowired
     private BoardDAO boardDAO;
 
     @Autowired
     private DataSourceTransactionManager txManager;
 
-    public List<? extends BoardVO> selectBoardList(SearchVO searchVO) {
+    public List<BoardVO> selectBoardList(SearchVO searchVO) {
         return boardDAO.selectBoardList(searchVO);
     }
 
@@ -61,12 +65,12 @@ public class BoardService {
 
             txManager.commit(status);
         } catch (Exception e) {
-            System.out.println("데이터 저장 오류" + e.toString());
+            LOGGER.error(e.toString());
             txManager.rollback(status);
         }
     }
 
-    public List<? extends FileVO> selectBoardFileList(String brdno) {
+    public List<FileVO> selectBoardFileList(String brdno) {
         return boardDAO.selectBoardFileList(brdno);
     }
 
@@ -110,7 +114,7 @@ public class BoardService {
         return true;
     }
 
-    public List<? extends ReplyVO> selectBoardReplyList(String brdno) {
+    public List<ReplyVO> selectBoardReplyList(String brdno) {
         return boardDAO.selectBoardReplyList(brdno);
     }
 }

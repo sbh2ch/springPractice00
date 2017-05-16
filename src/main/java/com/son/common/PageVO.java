@@ -16,13 +16,13 @@ public class PageVO {
     public void pageCalculate(int total) {
         getPage();
         totRow = total;
-        totPage = (int) total / displayRowCount;
+        totPage = total / displayRowCount;
 
         if (total % displayRowCount > 0) {
             totPage++;
         }
 
-        pageStart = (page - (page - 1) % 10); // 1
+        pageStart = page - (page - 1) % 10; // 1
         pageEnd = pageStart + 9;
 
         if (pageEnd > totPage) {

@@ -1,6 +1,7 @@
 package com.son.common;
 
-import com.mysql.jdbc.log.Log4JLogger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,11 +12,14 @@ import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.net.URLEncoder;
 
+
 /**
  * Created by kiost on 2017-04-28.
  */
 @Controller
 public class FileDownload {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileDownload.class);
+
     @RequestMapping("/fileDownload")
     public void fileDownload(HttpServletRequest req, HttpServletResponse res) {
         String path = "f:\\fileupload\\";
@@ -29,7 +33,7 @@ public class FileDownload {
         try {
             fileName = URLEncoder.encode(fileName, "UTF-8").replaceAll("\\+", "%20");
         } catch (Exception e) {
-
+            LOGGER.error(e.toString());
         }
 
         realPath = path + downName.substring(0, 4) + "\\" + downName;
@@ -44,7 +48,7 @@ public class FileDownload {
             OutputStream os = res.getOutputStream();
             FileInputStream fis = new FileInputStream(realPath);
 
-            int ncount = 0;
+            int ncount;
             byte[] bytes = new byte[512];
 
             while ((ncount = fis.read(bytes)) != -1) {
@@ -53,7 +57,7 @@ public class FileDownload {
             fis.close();
             os.close();
         } catch (Exception ex) {
-            System.out.println("FileNotFoundException : " + ex.toString());
+            LOGGER.error(ex.toString());
         }
     }
 }

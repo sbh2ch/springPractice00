@@ -3,7 +3,7 @@ package com.son.common;
 /**
  * Created by kiost on 2017-04-24.
  */
-public class SearchVO extends PageVO{
+public class SearchVO extends PageVO {
     private String bgno;
     private String searchKeyword = "";
     private String searchType = "";
@@ -40,4 +40,5 @@ public class SearchVO extends PageVO{
     public void setSearchTypeArr(String[] searchTypeArr) {
         this.searchTypeArr = searchTypeArr;
     }
+
 }
