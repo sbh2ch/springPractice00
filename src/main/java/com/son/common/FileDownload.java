@@ -26,6 +26,7 @@ public class FileDownload {
         String fileName = req.getParameter("fileName");
         String downName = req.getParameter("downName");
         String realPath = "";
+        System.out.println(fileName);
 
         if (fileName == null || "".equals(fileName)) {
             fileName = downName;
