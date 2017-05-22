@@ -78,6 +78,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/read.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../gradle-board/.gitignore">
           <value>
             <set />
@@ -123,6 +128,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../gradle-board/src/main/java/com/son/reply/ReplyController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gradle-board/src/main/java/com/son/reply/ReplyDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gradle-board/src/main/java/com/son/reply/ReplyService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gradle-board/src/main/java/com/son/reply/ReplyVo.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../gradle-board/src/main/java/com/son/util/Page.java">
           <value>
             <set />
@@ -138,6 +163,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../gradle-board/src/main/resources/sql/reply.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gradle-board/src/main/webapp/WEB-INF/applicationContext.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../gradle-board/src/main/webapp/WEB-INF/core-servlet.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../gradle-board/src/main/webapp/WEB-INF/jsp/list.jsp">
           <value>
             <set />
@@ -149,6 +189,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../gradle-board/src/main/webapp/WEB-INF/jsp/writeForm.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/dev/workspace/status/WebContent/m_rgb_list.jsp">
           <value>
             <set />
           </value>

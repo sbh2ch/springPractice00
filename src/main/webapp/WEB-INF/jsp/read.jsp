@@ -72,8 +72,8 @@
 <div id="replyDiv" style="width: 99%; display: none;">
     <form name="form2" action="replySave" method="post">
         <input type="hidden" name="brdno" value="<c:out value="${boardInfo.brdno}"/>">
-        <input type="hidden" name="reno" required>
-        <textarea name="rememo" rows="3" cols="60" maxlength="500"></textarea>
+        <input type="hidden" name="reno" >
+        <textarea name="rememo" rows="3" cols="60" maxlength="500" required></textarea>
         <input type="submit" value="save">
         <a href="#" onclick="fn_replyUpdateCancel()">cancel</a>
     </form>
